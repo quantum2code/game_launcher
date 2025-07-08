@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Reddit+Sans:ital,wght@0,200..900;1,200..900&display=swap');
 @import "tailwindcss";
 
 :root {
@@ -15,3 +16,19 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+body {
+  font-family: "Reddit Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.border-b {
+  border: 1px solid blue;
+}
+.border-r {
+  border: 1px solid red;
+}
+li{
+  list-style: none;
+}
