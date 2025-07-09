@@ -1,11 +1,11 @@
 import React, { useCallback, useContext, useEffect } from "react";
 import { gameData } from "../game.data";
 import { ActiveIdxContext } from "../App";
-import { motion } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 
 //const values
-const ICON_SIDE_LENGTH_n = "7rem";
-const ICON_SIDE_LENGTH_a = "10rem";
+const ICON_SIDE_LENGTH_n = "6rem";
+const ICON_SIDE_LENGTH_a = "8rem";
 
 const ICON_ANIM_n = {
   width: ICON_SIDE_LENGTH_n,
@@ -18,14 +18,12 @@ const ICON_ANIM_a = {
 
 const Carousel = () => {
   //
-  const { activeIdx, setActiveIdx } = useContext(ActiveIdxContext);
+  const { activeIdx, setActiveIdx, setActiveBgImg } =
+    useContext(ActiveIdxContext);
   //handlers
-  const handleClick = useCallback(
-    (activeIdx, setActiveIdx, idx) => {
-      setActiveIdx(idx);
-    },
-    [setActiveIdx]
-  );
+  const handleClick = (idx) => {
+    setActiveIdx(idx);
+  };
 
   const handleKeyPress = useCallback(
     (event) => {
@@ -39,28 +37,34 @@ const Carousel = () => {
     },
     [gameData.length, setActiveIdx]
   );
+
   //
   const carouselConstructor = () => {
     return gameData.map((game, idx) => (
-      <motion.div
-        initial={{
-          width: ICON_SIDE_LENGTH_n,
-          height: ICON_SIDE_LENGTH_n,
-        }}
-        animate={activeIdx === idx ? ICON_ANIM_a : ICON_ANIM_n}
-        transition={{
-          type: "spring",
-          stiffness: 500,
-          damping: 30,
-        }}
-        ////////////////////////////////////////////////////////
-        key={idx + game.name}
-        className="border-r"
-        onClick={() => handleClick(activeIdx, setActiveIdx, idx)}
-      ></motion.div>
+      <AnimatePresence>
+        <motion.div
+          key={idx + game.name}
+          initial={ICON_ANIM_a}
+          animate={activeIdx === idx ? ICON_ANIM_a : ICON_ANIM_n}
+          transition={{
+            duration: 0.25,
+            ease: "easeInOut",
+          }}
+          ////////////////////////////////////////////////////////
+          className="border-r"
+          onClick={() => handleClick(idx)}
+        ></motion.div>
+      </AnimatePresence>
     ));
   };
 
+  useEffect(() => {
+    // Update the background image when the active index changes
+    setActiveBgImg(null);
+    setActiveBgImg(activeIdx);
+  }, [activeIdx]);
+
+  //keypress handler
   useEffect(() => {
     document.addEventListener("keydown", handleKeyPress);
 
@@ -69,13 +73,7 @@ const Carousel = () => {
     };
   }, [handleKeyPress]);
   //
-  return (
-    <div className="grid col-span-3 row-span-1 row-start-1 border-b ">
-      <div className="flex gap-2">
-        {carouselConstructor(activeIdx, setActiveIdx)}
-      </div>
-    </div>
-  );
+  return <div className="flex gap-2 col-span-3">{carouselConstructor()}</div>;
 };
 
 export default Carousel;

@@ -3,9 +3,9 @@ import BlurMaskSVG from "./SVGs/BlurMaskSVG";
 import VinigetteSVG from "./SVGs/VinigetteSVG";
 
 const BgComp = ({
-  vinigetteAmount = 0.3,
-  blurOpacityAmount = 0.4,
-  blurAmount = 0,
+  vinigetteAmount = 0.8,
+  blurOpacityAmount = 0.6,
+  blurAmount = 12,
 }) => {
   return (
     <>
@@ -16,7 +16,7 @@ const BgComp = ({
           WebkitMask: "url(#radial-opacity-mask)",
           opacity: vinigetteAmount,
         }}
-        className="absolute w-screen h-full inset-0 bg-black op z-10"
+        className="absolute inset-0 bg-black"
       ></div>
 
       {/* Blur layer */}
@@ -27,7 +27,7 @@ const BgComp = ({
           backdropFilter: `blur(${blurAmount}px)`,
           opacity: blurOpacityAmount,
         }}
-        className="absolute w-screen h-full inset-0 z-10"
+        className="absolute inset-0"
       ></div>
 
       {/* SVG Blur Mask */}
@@ -38,4 +38,4 @@ const BgComp = ({
   );
 };
 
-export default BgComp;
+export default React.memo(BgComp);

@@ -12,8 +12,8 @@ const VinigetteSVG = ({ w = "0", h = "0" }) => {
         <radialGradient
           id="radial-gradient-opacity-mask"
           cx="70%"
-          cy="25%"
-          r="90%"
+          cy="30%"
+          r="80%"
         >
           <stop offset="10%" stopColor="black" />
           <stop offset="100%" stopColor="white" />
