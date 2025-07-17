@@ -13,8 +13,8 @@ function App() {
 
   return (
     <div>
-      <div className="absolute inset-0 h-screen overflow-hidden">
-        <div className="absolute inset-0 mx-[5rem] pt-[2rem] z-50 flex flex-col">
+      <div className="absolute h-screen inset-0 overflow-hidden inter-font">
+        <div className="relative h-[100%] inset-0 mx-[5rem] pt-8 z-50 flex flex-col gap-[2rem]">
           {/* -------Navbar-------- */}
           <NavBar />
           {/* -------Hero Grid-------- */}

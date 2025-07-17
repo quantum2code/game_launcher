@@ -1,11 +1,11 @@
 import React from "react";
 
-const BlurMaskSVG = ({ w = "0", h = "0" }) => {
+const BlurMaskSVG = ({ w = "100%", h = "100%" }) => {
   return (
-    <svg width={w} height={h} viewBox="0 0 2000 2000">
+    <svg width={w} height={h}>
       <defs>
-        <radialGradient id="radial-gradient-mask" cx="70%" cy="25%" r="40%">
-          <stop offset="0%" stopColor="black" />
+        <radialGradient id="radial-gradient-mask" cx="70%" cy="50%" r="60%">
+          <stop offset="20%" stopColor="black" />
           <stop offset="100%" stopColor="white" />
         </radialGradient>
 

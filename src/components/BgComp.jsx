@@ -3,9 +3,9 @@ import BlurMaskSVG from "./SVGs/BlurMaskSVG";
 import VinigetteSVG from "./SVGs/VinigetteSVG";
 
 const BgComp = ({
-  vinigetteAmount = 0.8,
-  blurOpacityAmount = 0.6,
-  blurAmount = 12,
+  vinigetteAmount = 1,
+  blurOpacityAmount = 0.8,
+  blurAmount = 16,
 }) => {
   return (
     <>

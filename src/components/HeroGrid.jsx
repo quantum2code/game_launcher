@@ -1,14 +1,19 @@
 import React from "react";
 import Carousel from "./Carousel";
 import GameHero from "./GameHero";
+import AdCard from "./SVGs/AdCard";
+import GamesMetadata from "./GamesMetadata";
 
 const HeroGrid = () => {
   return (
-    <div className=" grid grid-cols-3 grid-rows-[max(40%,12rem)_1fr] gap-3 flex-1 z-20 ">
+    <div className=" flex flex-col h-full mb-20 z-20">
       {/* Carousel */}
       <Carousel />
       {/* GameHero */}
-      <GameHero />
+      <div className="flex-1 flex flex-row justify-between items-end">
+        <GameHero />
+        <GamesMetadata />
+      </div>
       {/* CardStack */}
     </div>
   );

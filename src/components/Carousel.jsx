@@ -2,10 +2,12 @@ import React, { useCallback, useContext, useEffect } from "react";
 import { gameData } from "../game.data";
 import { ActiveIdxContext } from "../App";
 import { AnimatePresence, motion } from "motion/react";
+import GameIcon from "./GameIcon";
+import GameIconTitle from "./GameIconTitle";
 
 //const values
 const ICON_SIDE_LENGTH_n = "6rem";
-const ICON_SIDE_LENGTH_a = "8rem";
+const ICON_SIDE_LENGTH_a = "9rem";
 
 const ICON_ANIM_n = {
   width: ICON_SIDE_LENGTH_n,
@@ -40,22 +42,29 @@ const Carousel = () => {
 
   //
   const carouselConstructor = () => {
-    return gameData.map((game, idx) => (
-      <AnimatePresence>
-        <motion.div
-          key={idx + game.name}
-          initial={ICON_ANIM_a}
-          animate={activeIdx === idx ? ICON_ANIM_a : ICON_ANIM_n}
-          transition={{
-            duration: 0.25,
-            ease: "easeInOut",
-          }}
-          ////////////////////////////////////////////////////////
-          className="border-r"
-          onClick={() => handleClick(idx)}
-        ></motion.div>
-      </AnimatePresence>
-    ));
+    return gameData.map((game, idx) => {
+      const isActive = activeIdx === idx;
+      return (
+        <div key={game.name}>
+          <AnimatePresence>
+            <motion.div
+              key={idx + game.name}
+              initial={ICON_ANIM_a}
+              animate={isActive ? ICON_ANIM_a : ICON_ANIM_n}
+              transition={{
+                duration: 0.25,
+                ease: "easeInOut",
+              }}
+              ////////////////////////////////////////////////////////
+              onClick={() => handleClick(idx)}
+            >
+              <GameIcon icon_img={game.icon_img} isActive={isActive} />
+            </motion.div>
+          </AnimatePresence>
+          <GameIconTitle game={game} isActive={isActive} />
+        </div>
+      );
+    });
   };
 
   useEffect(() => {
@@ -73,7 +82,11 @@ const Carousel = () => {
     };
   }, [handleKeyPress]);
   //
-  return <div className="flex gap-2 col-span-3">{carouselConstructor()}</div>;
+  return (
+    <div className="flex gap-1 col-span-3 h-[15rem]">
+      {carouselConstructor()}
+    </div>
+  );
 };
 
 export default Carousel;

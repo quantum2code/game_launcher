@@ -1,28 +1,48 @@
-@import url('https://fonts.googleapis.com/css2?family=Reddit+Sans:ital,wght@0,200..900;1,200..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Reddit+Sans:ital,wght@0,200..900;1,200..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import "tailwindcss";
-
 
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  
+
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
-  
-  --new-grad:linear-gradient(to right bottom, #051937, #004d7a, #008793, #00bf72, #a8eb12); 
+
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-body {
+.reddit-font {
   font-family: "Reddit Sans", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
+}
+.inter-font  {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.play-btn {
+  background: linear-gradient(
+    140deg,
+    rgba(173, 199, 216, 0.5) 0%,
+    rgba(91, 114, 128, 0.5) 100%
+  );
+  backdrop-filter: blur(20px);
+  border: 1px solid #838383;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.498);
+}
+.icon-border {
+  border-style: inset;
+  border: 2px solid #1a1a1a5f;
 }
 
 .border-b {
@@ -31,10 +51,63 @@ body {
 .border-r {
   border: 1px solid red;
 }
-li{
+li {
   list-style: none;
 }
 
-button{
+button {
   outline: 0;
+}
+.truncate-text {
+  line-clamp: 2;
+  -webkit-line-clamp: 2; 
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+
+  overflow: hidden; /* Hides any overflowing content */
+  text-overflow: ellipsis; /* Displays an ellipsis (...) for hidden text */
+}
+
+#noise-rect {
+		animation: rotate-animation 10s infinite linear;
+	}
+
+@keyframes rotate-animation {
+	0% {
+		transform: rotate(0deg);
+  }
+  50% {
+		transform: rotate(180deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.noise-border {
+  /* border-image: url(/public/noise.svg) 1/2px round; */
+
+  /* background: #333;
+  clip-path: polygon(
+    0% 0%, 
+    0% 100%, 
+    10px 100%, 
+    10px 10px, 
+    calc(100% - 10px) 10px, 
+    calc(100% - 10px) calc(100% - 10px), 
+    10px calc(100% - 10px), 
+    10px 100%, 
+    100% 100%, 
+    100% 0%
+  ); */
+  background: #00000000;
+  mask: 
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  padding: 2px; /* This defines the border width */
 }

@@ -5,17 +5,17 @@ const VinigetteSVG = ({ w = "0", h = "0" }) => {
     <svg
       width={w}
       height={h}
-      viewBox="0 0 2000 2000"
+      // viewBox="0 0 2000 2000"
       xmlns="http://www.w3.org/2000/svg"
     >
       <defs>
         <radialGradient
           id="radial-gradient-opacity-mask"
-          cx="70%"
-          cy="30%"
-          r="80%"
+          cx="60%"
+          cy="40%"
+          r="60%"
         >
-          <stop offset="10%" stopColor="black" />
+          <stop offset="0%" stopColor="black" />
           <stop offset="100%" stopColor="white" />
         </radialGradient>
 
