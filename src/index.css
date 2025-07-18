@@ -101,11 +101,11 @@ button {
   mask: 
     linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
-  mask-composite: subtract;
+  mask-composite: \73 ubtract;
   -webkit-mask: 
     linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
-  -webkit-mask-composite: source-out;
+  -webkit-mask-composite: \73 ource-out;
   padding: 2px; /* This defines the border width */
 }
 
