@@ -12,7 +12,7 @@ const Background = ({ bg_Idx }) => {
         transition={{ duration: 0.3, type: "tween" }}
         alt="Background"
         src={gameData[bg_Idx].bg_img}
-        className="w-full h-full object-cover absolute inset-0 pointer-events-none"
+        className="w-full h-full object-cover fixed inset-0 pointer-events-none overflow-hidden"
       ></motion.img>
     </AnimatePresence>
   );

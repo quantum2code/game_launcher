@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import NavBar from "./components/NavBar";
 import HeroGrid from "./components/HeroGrid";
 import BgComp from "./components/BgComp";
 import Background from "./components/Background";
-import { AnimatePresence } from "motion/react";
 import { motion } from "motion/react";
+import GameSpecificMenu from "./components/GameSpacificMenu/GameSpecificMenu";
 export const ActiveIdxContext = React.createContext();
 
 function App() {
@@ -12,9 +12,9 @@ function App() {
   const [activeBgImg, setActiveBgImg] = useState(0);
 
   return (
-    <div>
-      <div className="absolute h-screen inset-0 overflow-hidden inter-font">
-        <div className="relative h-[100%] inset-0 mx-[5rem] pt-8 z-50 flex flex-col gap-[2rem]">
+    <div className="">
+      <div className="absolute inset-0 flex flex-col inter-font">
+        <div className="relative h-fit inset-0 mx-[5rem] pt-8 z-50 flex flex-col gap-[2rem] no-scroll">
           {/* -------Navbar-------- */}
           <NavBar />
           {/* -------Hero Grid-------- */}
@@ -23,13 +23,14 @@ function App() {
           >
             <HeroGrid />
           </ActiveIdxContext.Provider>
+          <GameSpecificMenu />
         </div>
-        {/* Some absolute elements */}
-        {/* ---------Bg Images--------- */}
-        <Background bg_Idx={activeBgImg} />
-        {/* ---------BG_comp---------- */}
-        <BgComp />
       </div>
+      {/* Some absolute elements */}
+      {/* ---------Bg Images--------- */}
+      <Background bg_Idx={activeBgImg} />
+      {/* ---------BG_comp---------- */}
+      <BgComp />
     </div>
   );
 }

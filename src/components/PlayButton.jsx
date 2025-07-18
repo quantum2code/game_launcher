@@ -5,12 +5,18 @@ import MetalBorderWrapperHover from "./MetalBorderWrapperHover";
 const PlayButton = () => {
   return (
     <div className="flex gap-3 items-center mt-3 w-[60%] font-medium">
-      <MetalBorderWrapperHover borderRadius={"calc(infinity*1px)"}>
+      <MetalBorderWrapperHover
+        noiseSize={0.007}
+        borderRadius={"calc(infinity*1px)"}
+      >
         <button className="flex justify-center items-center min-w-[350px] p-4 rounded-full bg-[#b8b8b82c] backdrop-blur-2xl">
           <span className="text-[25px] tracking-wide">Return to Game</span>
         </button>
       </MetalBorderWrapperHover>
-      <MetalBorderWrapperHover borderRadius={"calc(infinity*1px)"}>
+      <MetalBorderWrapperHover
+        noiseSize={0.007}
+        borderRadius={"calc(infinity*1px)"}
+      >
         <button className="flex justify-center items-center min-w-[350px] p-4 rounded-full bg-[#b8b8b82c] backdrop-blur-2xl">
           <span className="text-[25px] tracking-wide">Stream</span>
         </button>

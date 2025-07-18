@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 
 const MetalBorderWrapper = ({ children, isActive, borderRadius = 0 }) => {
   return (
-    <div className="relative inset-0 p-[5px]">
+    <div className="relative inset-0 p-[4px]">
       <motion.div
         initial={{ opacity: 0 }}
         animate={isActive ? { opacity: 1 } : { opacity: 0 }}

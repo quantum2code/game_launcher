@@ -1,14 +1,15 @@
-import React from "react";
+import React, { useId } from "react";
 
-function NoiseBox({ noiseSize = "0.01", randomSeed = 1 }) {
+function NoiseBox({ noiseSize = 0.02, randomSeed = 72 }) {
+  const filterId = useId();
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      className="w-full aspect-square scale-150 opacity-90"
+      className="aspect-square scale-200 opacity-70"
       preserveAspectRatio="none"
       id="noise-rect"
     >
-      <filter id="whiteNoise">
+      <filter id={filterId}>
         <feTurbulence
           type="fractalNoise"
           baseFrequency={noiseSize}
@@ -29,9 +30,9 @@ function NoiseBox({ noiseSize = "0.01", randomSeed = 1 }) {
         />
       </filter>
 
-      <circle r={"50%"} cx={"50%"} cy={"50%"} filter="url(#whiteNoise)" />
+      <circle r={"50%"} cx={"50%"} cy={"50%"} filter={`url(#${filterId})`} />
     </svg>
   );
 }
 
-export default React.memo(NoiseBox);
+export default NoiseBox;

@@ -30,15 +30,13 @@
   font-style: normal;
 }
 
-.play-btn {
+.grad-1 {
   background: linear-gradient(
-    140deg,
-    rgba(173, 199, 216, 0.5) 0%,
-    rgba(91, 114, 128, 0.5) 100%
+    170deg,
+    rgba(58, 69, 77, 0.4) 0%,
+    rgba(16, 23, 28, 0.8) 60%
   );
-  backdrop-filter: blur(20px);
-  border: 1px solid #838383;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.498);
+  backdrop-filter: blur(100px);
 }
 .icon-border {
   border-style: inset;
@@ -110,4 +108,18 @@ button {
     linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   padding: 2px; /* This defines the border width */
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* For Firefox */
+html { /* Or target a specific container element */
+  scrollbar-width: none;
+}
+
+/* For Internet Explorer and older Edge versions */
+html { /* Or target a specific container element */
+  -ms-overflow-style: none;
 }

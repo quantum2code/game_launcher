@@ -8,7 +8,7 @@ const BgComp = ({
   blurAmount = 16,
 }) => {
   return (
-    <>
+    <div className="absolute w-full h-full overflow-hidden">
       {/* Viniegtte layer */}
       <div
         style={{
@@ -16,7 +16,7 @@ const BgComp = ({
           WebkitMask: "url(#radial-opacity-mask)",
           opacity: vinigetteAmount,
         }}
-        className="absolute inset-0 bg-black"
+        className="fixed inset-0 bg-black"
       ></div>
 
       {/* Blur layer */}
@@ -27,14 +27,14 @@ const BgComp = ({
           backdropFilter: `blur(${blurAmount}px)`,
           opacity: blurOpacityAmount,
         }}
-        className="absolute inset-0"
+        className="fixed inset-0"
       ></div>
 
       {/* SVG Blur Mask */}
       <BlurMaskSVG w="100%" h="100%" />
       {/* SVG Viniegtte */}
       <VinigetteSVG w="100%" h="100%" />
-    </>
+    </div>
   );
 };
 

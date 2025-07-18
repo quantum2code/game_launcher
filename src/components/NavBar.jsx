@@ -12,7 +12,7 @@ const navList = [
 const navConstructor = () => {
   return navList.map((nav, idx) => (
     <li key={idx + nav.name}>
-      <MetalBorderWrapperHover noiseSize={"0.02"}>
+      <MetalBorderWrapperHover noiseSize={0.02}>
         <a href={nav.link} className=" font-extralight p-2 px-3">
           {nav.name}
         </a>

@@ -15,7 +15,7 @@ const GlossLayerSVG = () => {
         repeatDelay: 3,
         duration: 4,
       }}
-      className={"absolute inset-0 blur-2xl opacity-50"}
+      className={"absolute inset-0 blur-2xl opacity-50 z-100"}
     >
       <svg
         width="500%"
