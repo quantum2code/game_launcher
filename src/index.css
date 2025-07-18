@@ -82,21 +82,6 @@ button {
 }
 
 .noise-border {
-  /* border-image: url(/public/noise.svg) 1/2px round; */
-
-  /* background: #333;
-  clip-path: polygon(
-    0% 0%, 
-    0% 100%, 
-    10px 100%, 
-    10px 10px, 
-    calc(100% - 10px) 10px, 
-    calc(100% - 10px) calc(100% - 10px), 
-    10px calc(100% - 10px), 
-    10px 100%, 
-    100% 100%, 
-    100% 0%
-  ); */
   background: #00000000;
   mask: 
     linear-gradient(#fff 0 0) content-box,
@@ -121,4 +106,14 @@ html { /* Or target a specific container element */
 /* For Internet Explorer and older Edge versions */
 html { /* Or target a specific container element */
   -ms-overflow-style: none;
+}
+
+/* zoom related */
+
+@media (max-width: 768px) {
+  html { zoom: 0.75; }
+}
+
+@media (min-width: 1200px) {
+  html { zoom: 1.1; }
 }
