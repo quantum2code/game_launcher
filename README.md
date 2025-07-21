@@ -10,8 +10,6 @@ Animated SVG and custom UI effects
 
 Inspired by the PS5 game menu design
 
-Fully responsive and modern layout
-
 # 🛠️ Tech Stack
 - React
 
