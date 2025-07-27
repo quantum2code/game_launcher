@@ -6,7 +6,7 @@ import GamesMetadata from "./GamesMetadata";
 
 const HeroGrid = () => {
   return (
-    <div className=" flex flex-col h-[calc(100vh-16rem)] mb-2 z-20">
+    <div className=" flex flex-col h-[calc(100vh-8rem)] mb-2 z-20">
       {/* Carousel */}
       <Carousel />
       {/* GameHero */}

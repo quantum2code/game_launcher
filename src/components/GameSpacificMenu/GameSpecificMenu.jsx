@@ -9,11 +9,11 @@ import hadesNews from "../../assets/ad/hades_news.jpg";
 const GameSpecificMenu = () => {
   return (
     <div className="relative w-full z-100 flex flex-col gap-4 pb-10">
-      <div className="flex gap-3">
+      <div className="flex gap-3 overflow-x-scroll">
         <TrophiesForGame />
         <FriendsPlayingWidget />
       </div>
-      <div className="flex gap-2">
+      <div className="flex gap-2 overflow-x-scroll">
         <GenericCard
           title={"New Updates"}
           subtitle={"Unseen Update pack"}

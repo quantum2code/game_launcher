@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import NavBar from "./components/NavBar";
 import HeroGrid from "./components/HeroGrid";
 import BgComp from "./components/BgComp";
 import Background from "./components/Background";
-import { motion } from "motion/react";
 import GameSpecificMenu from "./components/GameSpacificMenu/GameSpecificMenu";
 export const ActiveIdxContext = React.createContext();
 
@@ -31,6 +30,11 @@ function App() {
       <Background bg_Idx={activeBgImg} />
       {/* ---------BG_comp---------- */}
       <BgComp />
+      <div className="fixed w-full h-full bg-gray-900 z-200 md:hidden flex justify-center items-center ">
+        <div className="text-2xl text-gray-600 font-mono">
+          {"Please open this website on bigger screen :-)"}
+        </div>
+      </div>
     </div>
   );
 }

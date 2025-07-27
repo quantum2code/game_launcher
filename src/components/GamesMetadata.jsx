@@ -5,7 +5,7 @@ import MetalBorderWrapperHover from "./MetalBorderWrapperHover";
 
 const GamesMetadata = () => {
   return (
-    <div className="flex gap-5">
+    <div className="gap-5 lg:flex hidden">
       <MetalBorderWrapperHover>
         <CompletionWidget />
       </MetalBorderWrapperHover>

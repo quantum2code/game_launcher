@@ -1,4 +1,4 @@
-import React, { act, useContext } from "react";
+import React, { useContext } from "react";
 import PlayButton from "./PlayButton";
 import GamesMetadata from "./GamesMetadata";
 import { gameData } from "../game.data";
@@ -17,7 +17,7 @@ const GameHero = () => {
       >
         <img src={gameData[activeIdx].logo_img} className="w-full h-[10rem]" />
       </motion.div>
-      <span className="font-extralight w-[25rem] text-[16pt] tracking-wider truncate-text mb-10">
+      <span className="font-extralight w-[25rem] text-[16pt] tracking-wider line-clamp-2 mb-10">
         {gameData[activeIdx].desc}
       </span>
       {/* <Tag tagArray={tagArray} /> */}

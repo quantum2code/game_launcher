@@ -55,15 +55,6 @@ li {
 button {
   outline: 0;
 }
-.truncate-text {
-  line-clamp: 2;
-  -webkit-line-clamp: 2; 
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-
-  overflow: hidden; /* Hides any overflowing content */
-  text-overflow: ellipsis; /* Displays an ellipsis (...) for hidden text */
-}
 
 #noise-rect {
 		animation: rotate-animation 10s infinite linear;
@@ -109,11 +100,7 @@ html { /* Or target a specific container element */
 }
 
 /* zoom related */
-
-@media (max-width: 768px) {
-  html { zoom: 0.75; }
+html{
+  zoom: 0.85;
 }
 
-@media (min-width: 1200px) {
-  html { zoom: 1.1; }
-}
